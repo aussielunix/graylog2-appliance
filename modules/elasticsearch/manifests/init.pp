@@ -1,6 +1,6 @@
-# Class: foo
+# Class: elasticsearch
 #
-# This module manages foo
+# This is a module for managing a single node elasticsearch instance.
 #
 # Parameters:
 #
@@ -10,9 +10,12 @@
 #
 # Sample Usage:
 #
-# [Remember: No empty lines between comments and class definition]
-class foo {
-  include foo::install
-  include foo::config
-  include foo::service
+# class default {
+#   include elasticsearch
+# }
+#
+class elasticsearch {
+  include elasticsearch::install
+  include elasticsearch::config
+  include elasticsearch::service
 }
