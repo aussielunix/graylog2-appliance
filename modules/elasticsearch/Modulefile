@@ -1,0 +1,8 @@
+name    'aussielunix-elasticsearch'
+version '0.0.1'
+author 'Mick Pollard <aussielunix@gmail.com>'
+description 'manage an elasticsearch instance'
+
+## Add dependencies, if any:
+dependency 'puppetlabs/apt', '>= 0.0.2'
+
