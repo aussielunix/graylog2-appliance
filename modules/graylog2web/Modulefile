@@ -1,0 +1,8 @@
+name    'aussielunix-graylog2-web'
+version '0.0.1'
+author 'Mick Pollard <@aussielunix>'
+description 'manage a graylog2-web instance'
+
+## Add dependencies, if any:
+dependency 'puppetlabs/apt', '>= 0.0.2'
+
