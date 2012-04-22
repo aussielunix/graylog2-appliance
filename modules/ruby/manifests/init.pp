@@ -18,5 +18,5 @@
 #
 class ruby {
   include ruby::install
-  include ruby::rubygems
+  include ruby::bundler
 }
