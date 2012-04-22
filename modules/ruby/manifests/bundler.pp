@@ -1,6 +1,6 @@
 class ruby::bundler {
   package {'bundler':
-    endure   => present,
+    ensure   => present,
     provider => 'gem',
     require  => Class['ruby::install']
   }

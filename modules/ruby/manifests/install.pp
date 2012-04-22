@@ -3,12 +3,12 @@
 #
 class ruby::install {
   # ensure that apt::ppa is available to us
-  include ppa
+  include apt
 
   # This PPA gives us modern day rubygems
   apt::ppa { 'ppa:maco.m/ruby': }
 
-  $packages = ['ruby', 'rdoc', 'rdoc1.8', 'irb', 'irb1.8', 'libreadline-ruby', 'libreadline-ruby1.8', 'rubygems'],
+  $packages = ['ruby', 'rdoc', 'rdoc1.8', 'irb', 'irb1.8', 'libreadline-ruby', 'libreadline-ruby1.8', 'rubygems']
 
   package { $packages:
     ensure  => present,

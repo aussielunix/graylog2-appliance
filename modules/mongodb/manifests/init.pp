@@ -25,7 +25,7 @@ class mongodb(
 ) inherits mongodb::params {
 
   # ensure that apt::ppa is available to us
-  include ppa
+  include apt
 
   # This is the PPA provided by 10gen
   apt::source {'10gen':
@@ -33,12 +33,12 @@ class mongodb(
     release           => '10.4',
     repos             => '10gen',
     key               => '7F0CEB10',
-    keyserver         => 'keyserver.ubuntu.com',
+    key_server         => 'keyserver.ubuntu.com',
   }
 
   package { $package:
     ensure => installed,
-    require => Apt::source['10gen']
+    require => Apt::Source['10gen']
   }
 
   service { "mongodb":
