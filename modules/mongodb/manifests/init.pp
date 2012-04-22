@@ -20,7 +20,6 @@
 class mongodb(
   $replSet = $mongodb::params::replSet,
   $ulimit_nofile = $mongodb::params::ulimit_nofile,
-  $repository = $mongodb::params::repository,
   $package = $mongodb::params::package
 ) inherits mongodb::params {
 
