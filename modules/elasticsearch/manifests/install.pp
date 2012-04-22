@@ -12,7 +12,7 @@ class elasticsearch::install {
     repos       => 'main',
     key         => 'D77A4DCC',
     key_server  => 'keyserver.ubuntu.com',
-    include_src => 'false'
+    include_src => false
   }
 
   package {'elasticsearch':
