@@ -5,6 +5,6 @@
 class graylog2server::install {
   package {'graylog2-server':
     ensure  => present,
-    require => Apt::Source['aussielunix']
+    require => [ Apt::Source['aussielunix'], Class['ruby'] ]
   }
 }

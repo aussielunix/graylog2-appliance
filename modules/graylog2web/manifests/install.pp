@@ -5,6 +5,6 @@
 class graylog2web::install {
   package {'graylog2-web':
     ensure  => present,
-    require => [ Apt::Source['aussielunix'], Class['ruby'] ]
+    require => [ Apt::Source['aussielunix'], Class['ruby::bundler'] ]
   }
 }
