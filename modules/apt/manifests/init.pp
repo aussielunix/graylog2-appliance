@@ -29,44 +29,44 @@ class apt(
 ) {
 
   include apt::params
+  include apt::update
 
   validate_bool($purge_sources_list, $purge_sources_list_d)
 
-  $refresh_only_apt_update = $always_apt_update? {
-    true  => false,
-    false => true,
-  }
-
-  if ! defined(Package['python-software-properties']) {
-    package { 'python-software-properties': }
-  }
-
   $sources_list_content = $purge_sources_list ? {
-    false =>  undef,
+    false => undef,
     true  => "# Repos managed by puppet.\n",
   }
+
+  if $always_apt_update == true {
+    Exec <| title=='apt_update' |> {
+      refreshonly => false,
+    }
+  }
+
+  $root           = $apt::params::root
+  $apt_conf_d     = $apt::params::apt_conf_d
+  $sources_list_d = $apt::params::sources_list_d
+  $provider       = $apt::params::provider
+
   file { 'sources.list':
     ensure  => present,
-    path    => "${apt::params::root}/sources.list",
+    path    => "${root}/sources.list",
     owner   => root,
     group   => root,
     mode    => '0644',
     content => $sources_list_content,
+    notify  => Exec['apt_update'],
   }
 
   file { 'sources.list.d':
     ensure  => directory,
-    path    => "${apt::params::root}/sources.list.d",
+    path    => $sources_list_d,
     owner   => root,
     group   => root,
     purge   => $purge_sources_list_d,
     recurse => $purge_sources_list_d,
-  }
-
-  exec { 'apt_update':
-    command     => "${apt::params::provider} update",
-    subscribe   => [ File['sources.list'], File['sources.list.d'] ],
-    refreshonly => $refresh_only_apt_update,
+    notify  => Exec['apt_update'],
   }
 
   case $disable_keys {
@@ -74,23 +74,24 @@ class apt(
       file { '99unauth':
         ensure  => present,
         content => "APT::Get::AllowUnauthenticated 1;\n",
-        path    => '/etc/apt/apt.conf.d/99unauth',
+        path    => "${apt_conf_d}/99unauth",
       }
     }
     false: {
       file { '99unauth':
         ensure => absent,
-        path   => '/etc/apt/apt.conf.d/99unauth',
+        path   => "${apt_conf_d}/99unauth",
       }
     }
-    undef: { } # do nothing
+    undef:   { } # do nothing
     default: { fail('Valid values for disable_keys are true or false') }
   }
 
-  if($proxy_host) {
+  if ($proxy_host) {
     file { 'configure-apt-proxy':
-      path    => '/etc/apt/apt.conf.d/proxy',
+      path    => "${apt_conf_d}/proxy",
       content => "Acquire::http::Proxy \"http://${proxy_host}:${proxy_port}\";",
+      notify  => Exec['apt_update'],
     }
   }
 }

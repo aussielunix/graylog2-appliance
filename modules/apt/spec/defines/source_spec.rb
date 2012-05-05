@@ -6,6 +6,7 @@ describe 'apt::source', :type => :define do
 
   let :default_params do
     {
+      :ensure             => 'present',
       :location           => '',
       :release            => 'karmic',
       :repos              => 'main',
@@ -35,6 +36,12 @@ describe 'apt::source', :type => :define do
       :key                => 'key_name',
       :key_server         => 'keyserver.debian.com',
       :key_content        => false,
+    },
+    {
+      :ensure             => 'absent',
+      :location           => 'somewhere',
+      :release            => 'precise',
+      :repos              => 'security',
     }
   ].each do |param_set|
     describe "when #{param_set == {} ? "using default" : "specifying"} class parameters" do
@@ -66,7 +73,7 @@ describe 'apt::source', :type => :define do
       it { should contain_apt__params }
 
       it { should contain_file("#{title}.list").with({
-          'ensure'    => 'file',
+          'ensure'    => param_hash[:ensure],
           'path'      => filename,
           'owner'     => 'root',
           'group'     => 'root',
@@ -90,9 +97,8 @@ describe 'apt::source', :type => :define do
       }
 
       it {
-        should contain_exec("#{title} apt update").with({
+        should contain_exec("apt_update").with({
           "command"     => "/usr/bin/apt-get update",
-          "subscribe"   => "File[#{title}.list]",
           "refreshonly" => true
         })
       }
