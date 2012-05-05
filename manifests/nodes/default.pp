@@ -1,7 +1,6 @@
 node default {
   include ruby
   include elasticsearch
-  include graylog2server
-  include graylog2web
+  include graylog2
   class { mongodb: }
 }

@@ -1,0 +1,8 @@
+source :rubygems
+
+puppetversion = ENV.key?('PUPPET_VERSION') ? "= #{ENV['PUPPET_VERSION']}" : ['>= 2.7.14']
+
+gem 'rake'
+gem 'facter'
+gem 'puppet', puppetversion
+gem 'puppet-lint'

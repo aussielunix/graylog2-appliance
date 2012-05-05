@@ -10,8 +10,8 @@
 #
 # Sample Usage:
 #
-class graylog2server {
-  include graylog2server::install
-  include graylog2server::config
-  include graylog2server::service
+class graylog2::server {
+  include graylog2::server::install
+  include graylog2::server::config
+  include graylog2::server::service
 }

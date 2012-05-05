@@ -1,0 +1,10 @@
+name    'aussielunix-graylog2'
+version '0.0.1'
+author 'Mick Pollard <aussielunix@gmail.com>'
+description 'manage a Graylog2 system'
+
+## Add dependencies, if any:
+dependency 'puppetlabs/apt', '>= 0.0.2'
+dependency 'aussielunix/mongo', '>= 0.0.1'
+dependency 'aussielunix/elasticsearch', '>= 0.0.1'
+
