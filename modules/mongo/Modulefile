@@ -1,0 +1,8 @@
+name    'aussielunix-mongo'
+version '0.0.1'
+author 'Mick Pollard <aussielunix@gmail.com>'
+description 'manage a mongo instance'
+
+## Add dependencies, if any:
+dependency 'puppetlabs/apt', '>= 0.0.2'
+
