@@ -1,6 +1,7 @@
 # elasticsearch puppet module
 
 This is a module for managing a single node elasticsearch instance.  
+
 This ensures:
 
 * that the _elasticsearch_ package is installed
@@ -10,8 +11,12 @@ This ensures:
 
 ## Requirements
 
-This module makes use of the puppetlabs-apt module.  
+This module requires access to a apt repo (PPA) that has an elasticsearch
+package.  
+You can build your own package and host it or I have a package available in my
+own [apt repos.](https://github.com/aussielunix/puppet-aussielunix/blob/master/manifests/repo.pp)
 
+Package building couldn't be simpler than with this [fpm-cookery](https://github.com/bernd/fpm-recipes/tree/master/elasticsearch) recipe. 
 
 ## Usage
 
