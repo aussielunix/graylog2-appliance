@@ -1,10 +1,10 @@
 # mongodb puppet module
 
-This is a module for managing a single node omngodb instance.  
+This is a module for managing a single node mongodb instance.  
 This ensures:
 
 * the 10gen apt-repo is installed
-* that the _mongodb-stab;e_ package is installed
+* that the _mongodb-stable_ package is installed
 * the _mongod_ service is always running
 * the _mongod_ service is set to auto start at boot
 * installs _/etc/mongodb.conf_
@@ -25,6 +25,7 @@ This module makes use of the puppetlabs-apt module.
 * Move to parameterised classes so that the config files do not need to be edited
   in the module itself.  
 * support for multiple mongodb replica sets.  
+* support for toggling mongodb auth on / off
 
 <table>
   <tr>
