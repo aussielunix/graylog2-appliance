@@ -3,7 +3,7 @@
 #
 class graylog2::web::install {
   package {'graylog2-web':
-    ensure  => present
-    # FIXME: set deps for ruby, rubygems & bundler
+    ensure  => present,
+    require => [ Class['ruby::install'], Class['ruby::bundler'] ]
   }
 }
