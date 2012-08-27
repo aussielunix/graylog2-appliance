@@ -3,6 +3,7 @@
 #
 class elasticsearch::install {
   package {'elasticsearch':
-    ensure  => present
+    ensure  => present,
+    require => Class['aussielunix::repo'],
   }
 }

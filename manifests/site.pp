@@ -1,4 +1,6 @@
-import 'nodes/*.pp'
-
-Exec { path => '/usr/bin:/usr/sbin/:/bin:/sbin' }
-
+node default {
+  include aussielunix         #setup aussielunix apt repo
+  include elasticsearch
+  include graylog2            # meta class installs web and server on same host
+  include mongodb
+}

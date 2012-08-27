@@ -4,6 +4,9 @@
 class graylog2::web::install {
   package {'graylog2-web':
     ensure  => present,
-    require => [ Class['ruby::install'], Class['ruby::bundler'] ]
+    require => [
+      Class['aussielunix::repo'],
+      #FIXME ruby
+    ]
   }
 }

@@ -1,6 +1,5 @@
 class mongo::install {
-  package { 'mongodb-stable':
+  package { 'mongodb':
     ensure  => 'installed',
-    require => Class['mongo::common']
   }
 }

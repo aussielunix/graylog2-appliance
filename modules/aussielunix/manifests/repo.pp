@@ -7,7 +7,7 @@ class aussielunix::repo {
   # make sure the aussielunix apt repos is available
   apt::source {'aussielunix':
     location    => 'http://ppa.lunix.com.au/ubuntu',
-    release     => 'lucid',
+    release     => 'precise',
     repos       => 'main',
     key         => 'D77A4DCC',
     key_server  => 'keyserver.ubuntu.com',

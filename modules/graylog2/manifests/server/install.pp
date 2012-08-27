@@ -3,6 +3,9 @@
 #
 class graylog2::server::install {
   package {'graylog2-server':
-    ensure  => present
+    ensure  => present,
+    require => [
+      Class['aussielunix::repo'],
+    ]
   }
 }
