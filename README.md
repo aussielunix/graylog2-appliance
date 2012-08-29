@@ -1,9 +1,16 @@
-## Graylog2 Appliance
+# Graylog2 Appliance
 
-This is a puppet manifest that makes use of some modules from the Puppetlabs  
-module forge to build out a graylog2 logging appliance.  
+This is some puppet manifests, modules and Vagrant to build out a graylog2 logging appliance.  
 
-*This is no where near ready for use yet*
+
+    vagrant up
+    # browser to locathost:3000
+
+## Todo
+
+* tune rsyslog to send logs to graylog2
+* make puppet modules work under a puppet master
+
 
 
 <table>
