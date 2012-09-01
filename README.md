@@ -27,9 +27,7 @@ Capistrano requires you have a clean Ubuntu Precise guest (from anywhere, local 
 ## Todo
 
 * tune rsyslog to send logs to graylog2
-* make puppet modules work under a puppet master
-
-
+* split out the Graylog2 puppet module to separate repos.
 
 <table>
   <tr>
