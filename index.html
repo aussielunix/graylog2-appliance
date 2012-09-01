@@ -1,0 +1,110 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Graylog2-appliance</title>
+  <meta name="description" content="manifests to wrap some puppet modules together for installing a graylog2 appliance">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Graylog2-appliance</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">manifests to wrap some puppet modules together for installing a graylog2 appliance</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/aussielunix/graylog2-appliance/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/aussielunix/graylog2-appliance/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/aussielunix/graylog2-appliance" class="code">View Graylog2-appliance on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>Graylog2 Appliance</h1>
+
+<p>In here is some puppet manifests and modules for building out a working Graylog2 system on a single host.<br>
+You have a choice of two very simple deployment methods: </p>
+
+<ul>
+<li>Vagrant</li>
+<li>Capistrano</li>
+</ul><p>Vagrant is for building out Graylog2 in a local virtualbox guest.<br><em>NOTE: Vagrant will download my basebox the first time you run it (455M).</em></p>
+
+<pre><code>vagrant up
+# browse to 172.31.255.2:3000
+</code></pre>
+
+<p>Capistrano is for building out Graylog2 on a remote host.<br>
+For full usage help run <code>cap -e go</code></p>
+
+<pre><code>cap go HOST='ec2-foo-09498.example.com'
+# browse to ec2-foo-09498.example.com:3000
+</code></pre>
+
+<h2>Requirements</h2>
+
+<p>Vagrant requires you have Virtualbox setup and the vagrant rubygem installed.<br>
+Capistrano requires you have a clean Ubuntu Precise guest (from anywhere, local VM, cloud provider etc) and the capistrano rubygem installed.  </p>
+
+<h2>Todo</h2>
+
+<ul>
+<li>tune rsyslog to send logs to graylog2</li>
+<li>split out the Graylog2 puppet module to separate repos.</li>
+</ul><table>
+<tr>
+<th>Author</th>
+<td>Mick Pollard (aussielunix at g mail dot com</td>
+  </tr>
+<tr>
+<th>Copyright</th>
+<td>Copyright (c) 2012 by Mick Pollard</td>
+  </tr>
+<tr>
+<th>License</th>
+<td>Distributed under the Apache License, see COPYING</td>
+  </tr>
+<tr>
+<th>twitter </th>
+<td><a href="https://github.com/aussielunix" class="user-mention">@aussielunix</a></td>
+  </tr>
+</table>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/aussielunix" class="avatar"><img src="https://secure.gravatar.com/avatar/2e33904616a79656ad93857ead3fe7b3?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/aussielunix">aussielunix</a> maintains <a href="https://github.com/aussielunix/graylog2-appliance">Graylog2-appliance</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/aussielunix/graylog2-appliance/tarball/master" class="tar">tar</a><a href="https://github.com/aussielunix/graylog2-appliance/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
