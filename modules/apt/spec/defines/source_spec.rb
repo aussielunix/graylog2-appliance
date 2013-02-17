@@ -22,7 +22,7 @@ describe 'apt::source', :type => :define do
 
   [{},
    {
-      :location           => 'somewhere',
+      :location           => 'http://example.com',
       :release            => 'precise',
       :repos              => 'security',
       :include_src        => false,
@@ -39,9 +39,15 @@ describe 'apt::source', :type => :define do
     },
     {
       :ensure             => 'absent',
-      :location           => 'somewhere',
+      :location           => 'http://example.com',
       :release            => 'precise',
       :repos              => 'security',
+    },
+    {
+      :release            => '',
+    },
+    {
+      :release            => 'custom',
     }
   ].each do |param_set|
     describe "when #{param_set == {} ? "using default" : "specifying"} class parameters" do
@@ -84,12 +90,12 @@ describe 'apt::source', :type => :define do
 
       it {
         if param_hash[:pin]
-          should contain_apt__pin(param_hash[:release]).with({
+          should contain_apt__pin(title).with({
             "priority"  => param_hash[:pin],
             "before"    => "File[#{title}.list]"
           })
         else
-          should_not contain_apt__pin(param_hash[:release]).with({
+          should_not contain_apt__pin(title).with({
             "priority"  => param_hash[:pin],
             "before"    => "File[#{title}.list]"
           })
