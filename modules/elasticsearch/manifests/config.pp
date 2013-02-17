@@ -1,32 +1,28 @@
 # elasticsearch::config
 # manages elasticsearch's configfiles
+# TODO: manage user and group here
 #
-class elasticsearch::config
-(
-  $user     = 'elasticsearch',
-  $group    = 'elasticsearch',
-  $minmem   = '256m',
-  $maxmem   = '2g',
-  $pathlogs = '/var/log/elasticsearch',
-  $pathconf = '/etc/elasticsearch',
-  $pathdata = '/var/lib/elasticsearch',
-)
-{
+class elasticsearch::config {
+  $user        = $elasticsearch::user
+  $group       = $elasticsearch::group
+  $minmem      = $elasticsearch::minmem
+  $maxmem      = $elasticsearch::maxmem
+  $pathlogs    = $elasticsearch::pathlogs
+  $pathconf    = $elasticsearch::pathconf
+  $pathdata    = $elasticsearch::pathdata
+  $clustername = $elasticsearch::clustername
+
   file {'/etc/elasticsearch/elasticsearch.yml':
     content => template('elasticsearch/elasticsearch.yml.erb'),
     mode    => '0644',
     owner   => 'root',
     group   => 'root',
-    require => Class['elasticsearch::install'],
-    notify  => Class['elasticsearch::service']
   }
 
   file {'/etc/default/elasticsearch':
-    content => template('elasticsearch/elasticsearch.erb'),
+    content => template('elasticsearch/defaults/elasticsearch.erb'),
     mode    => '0644',
     owner   => 'root',
     group   => 'root',
-    require => Class['elasticsearch::install'],
-    notify  => Class['elasticsearch::service']
   }
 }

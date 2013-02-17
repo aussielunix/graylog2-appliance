@@ -16,8 +16,6 @@ package.
 You can build your own package and host it or I have a package available in my
 own [apt repos.](https://github.com/aussielunix/puppet-aussielunix/blob/master/manifests/repo.pp)
 
-Package building couldn't be simpler than with this [fpm-cookery](https://github.com/bernd/fpm-recipes/tree/master/elasticsearch) recipe. 
-
 ## Usage
 
     node bar-01 {
@@ -26,8 +24,6 @@ Package building couldn't be simpler than with this [fpm-cookery](https://github
 
 ## TODO
 
-* Move to parameterised classes so that the config files do not need to be edited
-  in the module itself.  
 * support for multiple elastic search nodes.  
 
 <table>
