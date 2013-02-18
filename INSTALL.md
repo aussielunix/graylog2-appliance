@@ -62,5 +62,4 @@ curl -XGET 'http://localhost:9350/_status?pretty=true'
 
 ## TODO
 
-* new vagrant basebox with ruby1.9.3 set as default
 * redirect local syslog to graylog2
