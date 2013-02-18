@@ -9,7 +9,6 @@ echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" | 
 echo 'deb http://ppa.lunix.com.au/ubuntu/ precise main' | sudo tee -a /etc/apt/sources.list.d/aussielunix.list
 
 sudo apt-get update
-#sudo apt-get autoremove -y --purge ruby1.8
 sudo apt-get install -yq ruby1.9.3
 sudo update-alternatives --set ruby /usr/bin/ruby1.9.1
 sudo update-alternatives --set gem /usr/bin/gem1.9.1
@@ -23,7 +22,6 @@ sudo apt-get install -yq mongodb-10gen elasticsearch graylog2-server graylog2-we
 # setup ES to be part of the graylog2 cluster
 
 sudo sed -i -e 's/# cluster.name: elasticsearch/cluster.name: graylog2/' /etc/elasticsearch/elasticsearch.yml
-
 
 # (re)start all of the server things
 
@@ -57,6 +55,12 @@ curl -XGET 'http://localhost:9200/graylog2_recent/_search?pretty=true' -d '
 
 
 
-# check if there are any indexes at al
+# check if there are any indexes at all
 
 curl -XGET 'http://localhost:9350/_status?pretty=true'
+
+
+## TODO
+
+* new vagrant basebox with ruby1.9.3 set as default
+* redirect local syslog to graylog2
