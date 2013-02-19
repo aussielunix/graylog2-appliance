@@ -1,2 +1,4 @@
 tmp/
 .vagrant
+.tmp/
+modules/

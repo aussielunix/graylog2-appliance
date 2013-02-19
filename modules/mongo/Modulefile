@@ -1,8 +1,0 @@
-name    'aussielunix-mongo'
-version '0.0.2'
-author 'Mick Pollard <aussielunix@gmail.com>'
-description 'manage a mongodb instance'
-
-## Add dependencies, if any:
-dependency 'puppetlabs/apt', '>= 0.0.2'
-
