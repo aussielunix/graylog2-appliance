@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-source :rubygems
+source "https://rubygems.org"
 
 gem 'vagrant'
