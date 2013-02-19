@@ -63,3 +63,6 @@ curl -XGET 'http://localhost:9350/_status?pretty=true'
 ## TODO
 
 * redirect local syslog to graylog2
+
+(08:12:23) iggy: [11:51:40] <Rockj> iggy: processor_wait_strategy = blocking in
+graylog2.conf
