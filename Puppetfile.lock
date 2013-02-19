@@ -1,0 +1,51 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    puppetlabs/apt (1.1.0)
+      puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/stdlib (3.2.0)
+
+GIT
+  remote: git://github.com/aussielunix/puppet-module-aussielunix.git
+  ref: master
+  sha: e582a3a324b5f96b0444b53edd84f4b21ede9b74
+  specs:
+    aussielunix (0.0.1)
+
+GIT
+  remote: git://github.com/aussielunix/puppet-module-elasticsearch.git
+  ref: master
+  sha: dfd73bdbd7cde26e409264dadb7a3f78112e3db5
+  specs:
+    elasticsearch (0.0.1)
+
+GIT
+  remote: git://github.com/aussielunix/puppet-module-graylog2-server.git
+  ref: master
+  sha: 0ee25bfa98f0a6d5fc47cb1abad402fcd2f814f5
+  specs:
+    graylog2server (0.0.1)
+
+GIT
+  remote: git://github.com/aussielunix/puppet-module-graylog2-web.git
+  ref: master
+  sha: 21713c0ad7d11a5fdc924d4d2ffac81dbc33d0db
+  specs:
+    graylog2web (0.0.1)
+
+GIT
+  remote: git://github.com/aussielunix/puppet-module-mongo.git
+  ref: master
+  sha: b3d3280ef2a11ce72a93a37acbe278e44d9de667
+  specs:
+    mongo (0.0.2)
+
+DEPENDENCIES
+  aussielunix (>= 0)
+  elasticsearch (>= 0)
+  graylog2server (>= 0)
+  graylog2web (>= 0)
+  mongo (>= 0)
+  puppetlabs/apt (>= 0)
+  puppetlabs/stdlib (>= 0)
+
