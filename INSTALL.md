@@ -54,10 +54,16 @@ curl -XGET 'http://localhost:9200/graylog2_recent/_search?pretty=true' -d '
 }'
 
 
+curl -XGET 'http://localhost:9200/graylog2_0/_search?pretty=true' -d '
+{ 
+    "query" : { 
+        "matchAll" : {}  
+    }   
+}'
 
 # check if there are any indexes at all
 
-curl -XGET 'http://localhost:9350/_status?pretty=true'
+curl -XGET 'http://localhost:9200/_status?pretty=true'
 
 
 ## TODO
